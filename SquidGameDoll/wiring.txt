@@ -1,0 +1,33 @@
+[Arduino UNO]
+   |         |         |         |         |         |         |         |
+  D3       D5        D6        D7        D8        D9       D10       D11
+  |        |         |         |         |         |         |         |
+[ServoR] [ServoT] [PIR]   [UltrTrig] [UltrEcho] [LED_L_R] [DFP_RX] [DFP_TX]
+  |        |         |         |         |         |         |         |
+  ... (see table below for all pins) ...
+A0/A1/A2: Right Eye RGB
+A3: Button (to GND)
+5V/GND: All modules (use external 5V for servos if possible)
+
+Pin Table:
+| Device                | Arduino Pin | Notes                        |
+|-----------------------|-------------|------------------------------|
+| Head Servo (Rotate)   | D3          | PWM                          |
+| Head Servo (Tilt)     | D5          | PWM                          |
+| PIR Sensor OUT        | D6          | Digital input                |
+| Ultrasonic Trig       | D7          | Digital output               |
+| Ultrasonic Echo       | D8          | Digital input                |
+| DFPlayer Mini RX      | D10         | SoftwareSerial TX            |
+| DFPlayer Mini TX      | D11         | SoftwareSerial RX            |
+| LED Eye Left (R/G/B)  | D9, D12, D13| PWM for color (common cathode)|
+| LED Eye Right (R/G/B) | A0, A1, A2  | PWM for color (common cathode)|
+| Game Button           | A3          | Pulled LOW when pressed      |
+| DFPlayer VCC/GND      | 5V/GND      | Power                        |
+| Servos VCC/GND        | 5V/GND      | Use external 5V if possible  |
+| PIR/Ultrasonic VCC/GND| 5V/GND      | Power                        |
+| LEDs VCC/GND          | 5V/GND      | With resistors               |
+
+Notes:
+- Use resistors (220Ω–470Ω) for LEDs.
+- Use a common ground for all devices.
+- Servos may require external 5V supply for stable operation. 
